@@ -1,0 +1,1 @@
+Day.init("day-1")

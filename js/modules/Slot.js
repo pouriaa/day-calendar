@@ -20,8 +20,7 @@ var Slot = (function() {
 			top: yStart * day.height,
 			height: slotHeight
 		}
-
-		$("<section>l</section>").appendTo($("#" + day.id).find(".slots")).css(slotStyle)
+		$("<section>"+slot.content+"</section>").appendTo($("#" + day.id).find(".slots")).css(slotStyle)
 	}
 
 	function fromTopPercent (point, interval) {

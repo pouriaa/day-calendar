@@ -16,10 +16,12 @@ var Day = (function() {
 	function getSlots() {
 		var data = [
 			{
+				content: "First event",
 				start: 9,
 				end: 12
 			}, 
 			{
+				content: "Second event",				
 				start:14,
 				end: 16
 			}
@@ -33,6 +35,10 @@ var Day = (function() {
 
 	function renderHatchMarks() {
 		var range = interval.end - interval.start
+		var hatchSpacing = height / range
+		for (var i = 0; i < height; i += hatchSpacing) {
+			$("<span class='hatch-mark'></p>").appendTo($("#" + id).find('.slots')).css({top: i})
+		}
 	}
 
 	return {

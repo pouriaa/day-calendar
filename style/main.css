@@ -8,14 +8,23 @@ body {
 
 .day {
   height: 100%; }
-  .day .slots {
-    position: relative;
-    height: 100%; }
-    .day .slots section {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      border: 1px solid black;
-      text-align: center; }
+  .day .hatch-mark {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: rgba(155, 155, 155, 0.2);
+    z-index: 0; }
+
+.slots {
+  position: relative;
+  height: 100%; }
+  .slots section {
+    position: absolute;
+    background: white;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    border: 1px solid black;
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

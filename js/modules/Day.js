@@ -1,8 +1,8 @@
 var Day = (function() {
-	var date = new Date(),
+	var id,
 		height,
-		id,
-		interval = {}
+		interval = {},
+		date = new Date()
 
 	var init = function (elementId) {
 		id = elementId
@@ -17,13 +17,13 @@ var Day = (function() {
 		var data = [
 			{
 				content: "First event",
-				start: 9,
-				end: 12
-			}, 
+				start: dummyRangeInt(9, 11),
+				end: dummyRangeInt(12, 15)
+			},
 			{
-				content: "Second event",				
-				start:14,
-				end: 16
+				content: "Second event",			
+				start: dummyRangeInt(15, 18),
+				end: dummyRangeInt(19, 21)
 			}
 		]
 		Slot.renderSlots(data, {id: id, height: height, interval: interval})
@@ -37,8 +37,15 @@ var Day = (function() {
 		var range = interval.end - interval.start
 		var hatchSpacing = height / range
 		for (var i = 0; i < height; i += hatchSpacing) {
-			$("<span class='hatch-mark'></p>").appendTo($("#" + id).find('.slots')).css({top: i})
+			$("<span class='hatch-mark'></p>")
+				.appendTo($("#" + id).find('.slots'))
+				.css({top: i})
 		}
+	}
+
+	/** TEMP **/
+	function dummyRangeInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
 	return {

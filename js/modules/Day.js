@@ -1,13 +1,16 @@
 var Day = (function() {
-	var date = new Date()
-	var id
+	var date = new Date(),
+		height,
+		id,
+		interval = {}
 
 	var init = function (elementId) {
-		id = elementId;
-
+		id = elementId
+		height = calculateHeight()
+		interval = { start: 6, end: 22 }
+		
 		getSlots()
-		calculateHeight()
-		// renderHatchMarks()
+		renderHatchMarks()
 	}
 
 	function getSlots() {
@@ -17,15 +20,19 @@ var Day = (function() {
 				end: 12
 			}, 
 			{
-				start:13,
+				start:14,
 				end: 16
 			}
 		]
-		Slot.renderSlots(data, id)
+		Slot.renderSlots(data, {id: id, height: height, interval: interval})
 	}
 
 	function calculateHeight() {
 		return $("#"+id).find("div.slots").height()
+	}
+
+	function renderHatchMarks() {
+		var range = interval.end - interval.start
 	}
 
 	return {

@@ -9,6 +9,14 @@ body {
 .day {
 	height:100%;
 	.slots {
+		position: relative;
 		height:100%;
+		section {
+			position: absolute;
+			width:100%;
+			left: 0;
+			border: 1px solid black;
+			text-align: center;
+		}
 	}
 }

@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  height: 95vh;
   text-align: center; }
 
 .days {
@@ -14,6 +14,8 @@ body {
     width: 49%;
     box-sizing: border-box;
     display: inline-block; }
+    .days .day header {
+      background: rgba(0, 50, 252, 0.1); }
     .days .day .hatch-mark {
       position: absolute;
       height: 1px;
